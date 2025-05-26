@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(234,224,213);
+    font-family: "Fraunces", serif;
+}
+header{
+    background-color: #c3b091;
+}
+.sidebar{
+    background-color: #c3b091 !important;
+}
+
+h1{
+    color: #26283B
+}
+ul{
+    color: #26283B;
+}
+li>a{
+    text-decoration: none;
+    color: #26283B;
+}
+a:hover{
+    color: antiquewhite;
+}
+header>.casarolContainer{
+    height:max-content;
+    width: max-content;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.btn{
+    background-color: #26283B;
+    color: antiquewhite;
+    margin: 20px;
+    border: #26283B;
+    height: 3rem;
+    width: 10rem;
+    text-align: center;
+    justify-content: center;
+}
+btn:hover{
+    background-color: #3f4151;
+}
+.author{
+    text-decoration: none;
+    color: #26283B;
+}
+.author:hover{
+    color: #c3b091;
+}

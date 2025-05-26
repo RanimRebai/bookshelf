@@ -1,0 +1,63 @@
+<%- include('header')%>
+
+<div class="row g-5 mt-4">
+  <!-- Main books list -->
+  <div class="col-md-8">
+    <% if (books && books.length > 0) { %>
+      <% books.forEach(book => { %>
+        <div class="row mb-3 bookFrame">
+          <div class="col-sm-6 col-md-3 text-center">
+            <% if (book.cover_i) { %>
+              <img src="https://covers.openlibrary.org/b/id/<%= book.cover_i %>-M.jpg" alt="<%= book.title %>" class="img-fluid">
+            <% } else { %>
+              <p>No cover available</p>
+            <% } %>
+          </div>
+          <div class="col-6 col-md-9 my-3">
+            <h4><strong><%= book.title %></strong></h4>
+            <strong>by <a class="author" href="/author?id=<%=book.authorId%>"><%= book.author %></a></strong>
+
+            <br/><br>
+            <p>My personal rate <b><%=book.rate%></b></p>
+          
+            <p class="strong"><%=book.review%></p>
+          </div>
+        </div>
+        
+      <% }); %>
+    <% } else { %>
+      <p>No books found.</p>
+    <% } %>
+  </div>
+
+
+  <!-- Sidebar -->
+  <div class="col-md-4 sidebar mt-4">
+    <div class="position-sticky" style="top: 2rem;">
+      <div class="p-4">
+        <h4 class="fst-italic">Some Categories</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="/language?lang=Arabic">Books In Arabic</a></li>
+          <li><a href="/language?lang=French">Books In French</a></li>
+          <li><a href="/language?lang=English">Books In English</a></li>
+          <li><a href="/category?category=Romance">Love Stories</a></li>
+          <li><a href="/category?category=PoliticalFiction">Political Fiction</a></li>
+          <li><a href="/category?category=MagicalRealism">Magical Realism</a></li>
+          <li><a href="/category?category=Thriller">Thriller</a></li>
+          <li><a href="/category?category=Feelgood">Feel Good Novel</a></li>
+        </ol>
+      </div>
+
+      <div class="p-4">
+        <h4 class="fst-italic">Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer')%>
